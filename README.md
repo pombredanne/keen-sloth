@@ -54,7 +54,7 @@ keen projects:describe --project my-project-id --master-key my-master-key
 
 ### Examples
 
-Clone this repository and open up the [index.html](index.html) page. You'll see a text box that you can type keen-cli commands into. Go ahead, try it out!
+See an [example here](http://keen.github.io/keen-sloth). You'll find a text box that you can type keen-cli commands into. Go ahead, try it out!
 
 ### Contributing
 
