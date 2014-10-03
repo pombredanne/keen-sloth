@@ -19,18 +19,18 @@ You can also visit the hosted endpoint, [http://keen-sloth.herokuapp.com](http:/
 ### Installation
 
 Just download and include `keen-sloth.js` on your site.
-Currently, jQuery is a dependency, so you'll need to add that before `keen-sloth.js` if you don't have it already.
+Currently, jQuery is a dependency, so you'll need to add that before `keen-sloth.js` if you don't have it already. (PS: Sloths LOVE jQuery.)
 
 ``` html
-<script type="text/javascript" src="keen-sloth.js" />
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="keen-sloth.js" />
 ```
 
 ### Usage
 
 keen-sloth is initialized by supplying an HTML element name to use as text input, optional project information, and a callback to pass results to.
 
-Here's a simple snippet that logs the result of any keen-cli command to the console.
+Here's a simple snippet that logs the result of any keen-cli command to the console:
 
 ``` javascript
 var myInput = $("#input.sloth");
@@ -40,13 +40,13 @@ var slothLineInterface = new KeenSloth({
   readKey   : "my-read-key",    // optional
   writeKey  : "my-write-key",   // optional
   apiKey    : "my-master-key",  // optional
-  callback: function(jsonResult) {
-    console.log(jsonResult);
+  callback: function(slothJson) {
+    console.log(slothJson);
   }
 });
 ```
 
-If you don't specify a project ID and API keys up front you can pass them on as CLI parameters themselves:
+If you don't specify a project ID and API keys up front you can pass them as parameters to CLI commands:
 
 ``` shell
 keen projects:describe --project my-project-id --master-key my-master-key
@@ -54,7 +54,7 @@ keen projects:describe --project my-project-id --master-key my-master-key
 
 ### Examples
 
-Clone this repository and open up the index.html page. You'll see a text box that you can type keen-cli commands into. Go ahead, try it out!
+Clone this repository and open up the [index.html](index.html) page. You'll see a text box that you can type keen-cli commands into. Go ahead, try it out!
 
 ### Contributing
 
