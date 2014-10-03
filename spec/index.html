@@ -1,0 +1,39 @@
+<html>
+<head>
+    <script src="jquery.js"></script>
+    <script src="../keen-sloth.js"></script>
+    <link rel="stylesheet" href="bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <h3>keen-sloth test form</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-4">
+            <form id="sloth-form" class="form-inline" role="form" method="POST" action="./">
+                <div class="form-group">
+                    <input type="text" name="command" class="form-control" />
+                    <input type="submit" value="Crawl" class="form-control" />
+                </div>
+            </form>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+
+    var logFunction = function(json) {
+        console.log(json);
+    };
+
+    var KeenSloth = new KeenSloth({
+        formElement: $("#sloth-form"),
+        projectId: "53f3a8687d8cb95095000001",
+        readKey: "99a06e48fd7fb1279bc40995160eb0b61a9e0efaab8b651b029f0d895f77c0a804ba089282eff28bf8ad07f337422441d0542b7feaac9fea1e92fc153ee7efc51afad3276bda8d7754a338b349d540bfb402cba0dfdc82498c217054efd8abd0f47a0c0bc963bbdf0dc938c91b17d9f2",
+        callback: logFunction
+    });
+
+</script>
+</body>
+</html>
