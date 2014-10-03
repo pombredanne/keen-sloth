@@ -13,8 +13,8 @@ the way a sloth would do it.
 + One time we took a team trip to Costa Rica, home of sloths. On that trip we had a hackathon. Alex, Andrew, and I decided to make this.
 + Sloths are awesome and cute.
 
-How does it work? keen-sloth makes requests to a hosted endpoint that runs keen-cli commands in a safe manner.
-You can also visit the hosted endpoint, [http://keen-sloth.herokuapp.com](http://keen-sloth.herokuapp.com), to see keen-cli documentation.
+How does it work? keen-sloth makes requests to a [hosted endpoint](http://keen-cli-server.herokuapp.com) that runs keen-cli commands in a safe manner.
+It then calls the given callback and passes along those results.
 
 ### Installation
 
