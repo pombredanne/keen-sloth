@@ -28,18 +28,19 @@ Currently, jQuery is a dependency, so you'll need to add that before `keen-sloth
 
 ### Usage
 
-keen-sloth is initialized by supplying an HTML element name to use as text input, optional project information, and a callback to pass results to.
+keen-sloth is initialized by supplying an HTML form, optional project information, and a callback to pass results to. The form should contain
+an input or textarea with the class `command`. The text for the command to be sent to the keen-cli will be pulled from there.
 
 Here's a simple snippet that logs the result of any keen-cli command to the console:
 
 ``` javascript
-var myInput = $("#input.sloth");
-var slothLineInterface = new KeenSloth({
-  element   : myInput,
-  projectId : "my-project-id",  // optional
-  readKey   : "my-read-key",    // optional
-  writeKey  : "my-write-key",   // optional
-  apiKey    : "my-master-key",  // optional
+var myInput = $("#sloth-form");
+new KeenSloth({
+  formElement : myForm,
+  projectId   : "my-project-id",  // optional
+  readKey     : "my-read-key",    // optional
+  writeKey    : "my-write-key",   // optional
+  apiKey      : "my-master-key",  // optional
   callback: function(slothJson) {
     console.log(slothJson);
   }

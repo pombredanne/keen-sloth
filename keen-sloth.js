@@ -9,7 +9,18 @@
     // form element is supplied automatically wire it up (make sure to provide callback!)
     if (typeof this.parameters["formElement"] !== 'undefined') {
 
-      KeenSloth.bindForm(this.parameters["formElement"], this.parameters['callback']);
+      var projectId = this.parameters['projectId'];
+      var readKey = this.parameters['readKey'];
+
+      var extraParams = "";
+      if (projectId !== undefined) {
+        extraParams += " --project " + projectId;
+      }
+      if (readKey !== undefined) {
+        extraParams += " --read-key " + readKey;
+      }
+
+      KeenSloth.bindForm(this.parameters["formElement"], extraParams, this.parameters['callback']);
 
     }
 
@@ -20,8 +31,7 @@
   KeenSloth.postCommand = function(text, callback) {
 
     $.post("http://keen-cli-server.herokuapp.com/crawl", { command : text }, function(json) {
-//        callback(json);
-        callback({ result: 50 });
+        callback(json);
       }
     );
 
@@ -44,7 +54,7 @@
 
   }
 
-  KeenSloth.bindForm = function($formElement, callback) {
+  KeenSloth.bindForm = function($formElement, extraParams, callback) {
 
     $formElement.on("submit", function(event) {
 
@@ -52,8 +62,12 @@
       event.preventDefault();
 
       // make sure you have an input named command in the form
-      var $input = $($(this).find("input[name=command]")[0]);
-      var text = $input.val();
+      var $input = $($(this).find(".command")[0]);
+      var text = $input.val(); + extraParams;
+
+      if (text !== 'keen') {
+        text = text + extraParams;
+      }
 
       // post the command
       KeenSloth.postCommand(text, function(json) {
