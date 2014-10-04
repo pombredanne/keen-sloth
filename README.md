@@ -36,7 +36,7 @@ an input or textarea with the class `command`. The text for the command to be se
 Here's a simple snippet that logs the result of any keen-cli command to the console:
 
 ``` javascript
-var myInput = $("#sloth-form");
+var myForm = $("#sloth-form");
 new KeenSloth({
   formElement : myForm,
   projectId   : "my-project-id",  // optional
