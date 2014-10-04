@@ -2,6 +2,8 @@
 
 ### Embed the Keen IO command line interface on any website
 
+![keen-sloth screenshot](http://cl.ly/image/3L0g0a1u2z0p/download/Screen%20Shot%202014-10-04%20at%202.09.10%20PM.png)
+
 Too lazy to switch to terminal when you need to run a Keen IO query? Us too. That's why we made keen-sloth.
 keen-sloth lets you run [keen-cli](https://github.com/keenlabs/keen-cli) commands right from your browser, 
 the way a sloth would do it.
